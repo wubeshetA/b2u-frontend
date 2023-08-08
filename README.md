@@ -1,8 +1,28 @@
-# React + Vite
+# Bridge2University Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the frontend for the Bridge2University project. It is built using React.
 
-Currently, two official plugins are available:
+## Installation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Clone the repository: `git clone https://github.com/wubeshetA/B2U-frontend.git`
+2. Install dependencies: `npm install`
+3. Start the development server: `npm run dev`
+
+## Usage
+
+Once the development server is running, you can view the app in your browser at `http://127.0.0.1:5173/`.
+
+## Contributing
+
+We welcome contributions from the community! If you'd like to contribute to this project, please follow these steps:
+
+1. Fork the repository
+2. Create a new branch: `git checkout -b my-feature-branch`
+3. Make your changes and commit them: `git commit -am 'Add some feature'`
+4. Push to the branch: `git push origin my-feature-branch`
+5. Create a new pull request
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
