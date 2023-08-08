@@ -4,7 +4,7 @@ import Navbar from './components/navbar/navbar'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Banner from './components/banner/Banner';
 import Intro from './components/intro/Intro';
-// import Partners from './components/partners/Partners';
+import Partners from './components/partners/Partners';
 import Footer from './components/footer/Footer';
 import StudentRegistrationForm from './components/student/Registration';
 import MentorRegistrationForm from './components/mentor/Registration';
@@ -20,7 +20,7 @@ function App() {
           <Route exact path="/">
             <Banner/>
             <Intro/>
-            {/* <Partners/> */}
+            <Partners/>
             <Footer/>
           </Route>
           <Route path="/about">

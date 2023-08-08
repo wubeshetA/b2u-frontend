@@ -30,19 +30,19 @@ const Navbar = () => {
             <li
               className="items-center gap-6 lg:gap-10 text-base font-normal text-gray-400 tracking-wide cursor-pointer hover:text-designColor duration-300">
               
-            <Link to="/about">Alumni</Link>
+            <Link to="/">Alumni</Link>
             </li>
 
             <li
               className="items-center gap-6 lg:gap-10 text-base font-normal text-gray-400 tracking-wide cursor-pointer hover:text-designColor duration-300">
               
-            <Link to="/about">About Us</Link>
+            <Link to="/">About Us</Link>
             </li>
 
             <li
               className="items-center gap-6 lg:gap-10 text-base font-normal text-gray-400 tracking-wide cursor-pointer hover:text-designColor duration-300">
               
-            <Link to="/about">Contact Us</Link>
+            <Link to="/">Contact Us</Link>
             </li>
 
             <li className="bg-designColor px-4 py-2 rounded-md text-white items-center gap-6 lg:gap-10 text-base font-normal tracking-wide cursor-pointer hover:bg-designColorLight duration-300 font-bodyFont">
@@ -54,7 +54,7 @@ const Navbar = () => {
 </li>
 
             <li className="bg-yellow-500 px-4 py-2 rounded-md text-white items-center gap-6 lg:gap-10 text-base font-normal tracking-wide cursor-pointer hover:bg-yellow-600 duration-300 font-bodyFont">
-  <Link to="/about">Donate</Link>
+  <Link to="/">Donate</Link>
 </li>
 
         
