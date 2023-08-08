@@ -380,7 +380,10 @@ const StudentRegistrationForm = () => {
 
         <div className="mb-4 col-span-3">
           <label htmlFor="attachment" className="block text-sm font-medium">
-            Upload your Transcript (.PDf)
+            <p>Outline your short-term and long-term goals and how you plan to achieve them.
+</p>
+<p>Explain how your chosen field of study connects to your career aspirations.
+ (1000 words max)</p>
           </label>
           <input
             type="file"
