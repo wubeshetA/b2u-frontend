@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 
-const BaseUrl = 'http://127.0.0.1:8000';
+const BaseUrl = 'https://b2u-backend.vercel.app';
 const MentorRegistrationForm = () => {
   const initialFormData = {
     first_name: '',

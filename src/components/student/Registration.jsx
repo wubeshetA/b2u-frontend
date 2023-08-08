@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 
 
-const BaseUrl = 'http://127.0.0.1:8000';
+const BaseUrl = 'https://b2u-backend.vercel.app';
 const StudentRegistrationForm = () => {
   const initialFormData = {
     first_name: '',
@@ -394,7 +394,7 @@ const StudentRegistrationForm = () => {
 
 
         <div className="mt-4 col-span-3">
-          
+
   <div className="flex justify-center">
     <button
       type="submit"
