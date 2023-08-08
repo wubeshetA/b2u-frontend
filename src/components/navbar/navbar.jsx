@@ -50,7 +50,7 @@ const Navbar = () => {
 </li>
 
             <li className="bg-designColor px-4 py-2 rounded-md text-white items-center gap-6 lg:gap-10 text-base font-normal tracking-wide cursor-pointer hover:bg-designColorLight duration-300 font-bodyFont">
-  <Link to="/about">Be a Mentor</Link>
+  <Link to="/mentor">Be a Mentor</Link>
 </li>
 
             <li className="bg-yellow-500 px-4 py-2 rounded-md text-white items-center gap-6 lg:gap-10 text-base font-normal tracking-wide cursor-pointer hover:bg-yellow-600 duration-300 font-bodyFont">

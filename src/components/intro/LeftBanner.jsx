@@ -7,7 +7,7 @@ import React from "react";
 const LeftBanner = () => {
   
   return (
-    <div className="w-full lgl:w-1/2 flex flex-col gap-20 ">
+    <div className="w-full h- lgl:w-1/2 flex flex-col gap-20 ">
       <div className="flex flex-col gap-5">
         <h1 className="pl-60 text-3xl font-bold max-w-4xl font-titleFont m-0 relative z-20">
         Mentoring the Next Generation of Ethiopian Change Maker, highschoolers.

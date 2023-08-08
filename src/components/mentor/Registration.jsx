@@ -3,24 +3,22 @@ import axios from 'axios';
 
 
 const BaseUrl = 'http://127.0.0.1:8000';
-const StudentRegistrationForm = () => {
+const MentorRegistrationForm = () => {
   const initialFormData = {
     first_name: '',
-    middle_name: '',
     last_name: '',
-    date_of_birth: '',
     gender: '',
     email: '',
     phone: '',
     address: '',
-    school: '',
-    school_address: '',
-    grade: '',
-    cgpa: '',
-    intended_major1: '',
-    intended_major2: '',
-    intended_major3: '',
+    university: '',
+    nationality: '',
+    major: '',
+    essay1: '',
+    essay2: '',
+    essay3: '',
   };
+
 
   const [formData, setFormData] = useState(initialFormData);
   const [file, setFile] = useState([]);
@@ -38,13 +36,6 @@ const StudentRegistrationForm = () => {
 
   
 
-  const handleFileChange = (event) => {
-    // if event.target.files[0] not in the array file, add it
-    if (!file.includes(event.target.files[0])) {
-      setFile([...file, event.target.files[0]]);
-    }
-  }
-
 
 
   const handleSubmit = async (e) => {
@@ -53,22 +44,11 @@ const StudentRegistrationForm = () => {
   
     try {
       setLoading(true); // Start loading animation
-      const response = await axios.post(`${BaseUrl}/registrar/students/`, postData);
-  
-      const newStudentId = response.data.id;
-      const formData = new FormData();
-  
-      for (let i = 0; i < file.length; i++) {
-        formData.set('attachment', file[i]);
-        await axios.post(`${BaseUrl}/registrar/students/${newStudentId}/attachments/`, formData, {
-          headers: {
-            'Content-Type': 'multipart/form-data'
-          }
-        });
-      }
+      const response = await axios.post(`${BaseUrl}/registrar/mentors/`, postData);
 
 
-      alert('Your application has been submitted successfully!');
+
+      alert('Your application has been submitted successfully! Thank you for your willingness to help a student. We will contact you soon.');
       setLoading(false); // Stop loading animation
       setSubmitted(true); // Show success message
       setFile([]); // Clear the file input
@@ -91,13 +71,21 @@ const StudentRegistrationForm = () => {
   
 
   return (
-    <div className="max-w-4xl mx-auto mt-8 p-6 bg-white rounded-lg shadow font-bodyFont">
-      <h2 className="text-xl font-semibold mb-4">Student Application</h2>
+    <div className="max-w-4xl mx-auto mt-8 p-6 bg-white rounded-lg shadow">
+      <h2 className="text-xl font-semibold mb-4">Mentor Registration</h2>
 
-      <div className='mb-20'>
-      If you are grade 11 or 12 Ethiopian high school student, this might be the place to transform your life. 
+      
+      <div className="col-span-3">
+        
+        <p>The following questions help us to understand you well and match you with a student who needs your help best. Please provide us with as much information us you can (you can go beyond the word limit if necessary) </p>
       </div>
+
       <form onSubmit={handleSubmit} className="grid grid-cols-3 gap-4">
+
+
+      <div className='mb-4 col-span-3 mt-20'>
+        <h3><b>Personal information:</b></h3>
+        </div>
         {/* First Name */}
         <div className="mb-4 col-span-1">
           <label htmlFor="first_name" className="block text-sm font-medium">
@@ -139,22 +127,6 @@ const StudentRegistrationForm = () => {
             id="last_name"
             name="last_name"
             value={formData.last_name}
-            onChange={handleChange}
-            className="mt-1 p-2 w-full border rounded"
-            required
-          />
-        </div>
-
-        {/* Date of Birth */}
-        <div className="mb-4 col-span-1">
-          <label htmlFor="date_of_birth" className="block text-sm font-medium">
-            Date of Birth
-          </label>
-          <input
-            type="date"
-            id="date_of_birth"
-            name="date_of_birth"
-            value={formData.date_of_birth}
             onChange={handleChange}
             className="mt-1 p-2 w-full border rounded"
             required
@@ -218,43 +190,87 @@ const StudentRegistrationForm = () => {
             Address
           </label>
           <input
-          type='text'
+          type="text"
             id="address"
             name="address"
             value={formData.address}
             onChange={handleChange}
             className="mt-1 p-2 w-full border rounded"
-            rows="2"
+            required
+          />
+        </div>
+
+        {/* Nationality */}
+        <div className="mb-4 col-span-1">
+          <label htmlFor="nationality" className="block text-sm font-medium">
+            Nationality
+          </label>
+          <input
+          type="text"
+            id="nationality"
+            name="nationality"
+            value={formData.nationality}
+            onChange={handleChange}
+            className="mt-1 p-2 w-full border rounded"
             required
           />
         </div>
 
         {/* School */}
         <div className="mb-4 col-span-1">
-          <label htmlFor="school" className="block text-sm font-medium">
-            School
+          <label htmlFor="university" className="block text-sm font-medium">
+            University
           </label>
           <input
             type="text"
-            id="school"
-            name="school"
-            value={formData.school}
+            id="university"
+            name="university"
+            value={formData.university}
             onChange={handleChange}
             className="mt-1 p-2 w-full border rounded"
             required
           />
         </div>
 
-        {/* School Address */}
+
+        {/* Major  */}
         <div className="mb-4 col-span-1">
-          <label htmlFor="school_address" className="block text-sm font-medium">
-            School Address
+          <label htmlFor="major" className="block text-sm font-medium">
+            Major
           </label>
           <input
+            type="text"
+            id="major"
+            name="major"
+            value={formData.major}
+            onChange={handleChange}
+            className="mt-1 p-2 w-full border rounded"
+            required
+          />
+        </div>
+
+
+    
+        <div className='mb-4 col-span-3 mt-20'>
+        <h3><b>Supplemental questions </b></h3>
+        </div>
+
+
+        <div className="mb-4 col-span-3">
+        
+          <p>The following questions help us to understand you well and match you with a student who needs your help best. Please provide us with as much information us you can (you can go beyond the word limit if necessary) </p>
+        </div>
+
+         {/* essay1 */}
+         <div className="mb-4 col-span-3">
+          <label htmlFor="essay1" className="block text-sm font-medium">
+          What drives you to mentor students  (50 - 200 words) * 
+          </label>
+          <textarea
           type="text"
-            id="school_address"
-            name="school_address"
-            value={formData.school_address}
+            id="essay1"
+            name="essay1"
+            value={formData.essay1}
             onChange={handleChange}
             className="mt-1 p-2 w-full border rounded"
             rows="2"
@@ -262,140 +278,47 @@ const StudentRegistrationForm = () => {
           />
         </div>
 
-        {/* Grade */}
-        <div className="mb-4 col-span-1">
-          <label htmlFor="grade" className="block text-sm font-medium">
-            Grade
+         {/* essay2 */}
+         <div className="mb-4 col-span-3">
+          <label htmlFor="essay2" className="block text-sm font-medium">
+          Tell us how you get to the university you are
+studying now. Tell us if you have taken any standardized test,
+if anyone helped you through the process, etc (50 - 200 words) * 
           </label>
-          <input
-            type="text"
-            id="grade"
-            name="grade"
-            value={formData.grade}
+          <textarea
+            id="essay2"
+            name="essay2"
+            value={formData.essay2}
             onChange={handleChange}
             className="mt-1 p-2 w-full border rounded"
+            rows="2"
             required
           />
         </div>
 
-        {/* CGPA */}
-        <div className="mb-4 col-span-1">
-          <label htmlFor="cgpa" className="block text-sm font-medium">
-            CGPA
+
+         {/* essay3 */}
+        <div className="mb-4 col-span-3">
+          <label htmlFor="essay3" className="block text-sm font-medium">
+          Anything you would like to tell us?
           </label>
-          <input
-            type="text"
-            id="cgpa"
-            name="cgpa"
-            value={formData.cgpa}
+          <textarea
+            id="essay3"
+            name="essay3"
+            value={formData.essay3}
             onChange={handleChange}
             className="mt-1 p-2 w-full border rounded"
+            rows="2"
             required
           />
         </div>
 
-        {/* Intended Major 1 */}
-        <div className="mb-4 col-span-1">
-          <label htmlFor="intended_major1" className="block text-sm font-medium">
-            Intended Major 1
-          </label>
-          <input
-            type="text"
-            id="intended_major1"
-            name="intended_major1"
-            value={formData.intended_major1}
-            onChange={handleChange}
-            className="mt-1 p-2 w-full border rounded"
-            required
-          />
-        </div>
-
-        {/* Intended Major 2 */}
-        <div className="mb-4 col-span-1">
-          <label htmlFor="intended_major2" className="block text-sm font-medium">
-            Intended Major 2
-          </label>
-          <input
-            type="text"
-            id="intended_major2"
-            name="intended_major2"
-            value={formData.intended_major2}
-            onChange={handleChange}
-            className="mt-1 p-2 w-full border rounded"
-          />
-        </div>
-
-        {/* Intended Major 3 */}
-        <div className="mb-4 col-span-1">
-          <label htmlFor="intended_major3" className="block text-sm font-medium">
-            Intended Major 3
-          </label>
-          <input
-            type="text"
-            id="intended_major3"
-            name="intended_major3"
-            value={formData.intended_major3}
-            onChange={handleChange}
-            className="mt-1 p-2 w-full border rounded"
-          />
-        </div>
-
-        <div className='mb-4 col-span-3 mt-20'>
-          <p><b>Attachements</b></p>
-        </div>
-        <div className='mb-4 col-span-3'>
-          <p>Upload a pdf file for the following prompts</p>
-        </div>
-
-        {/* Transcript */}
-
-        <div className="mb-4 col-span-3">
-          <label htmlFor="attachment" className="block text-sm font-medium">
-            Upload your Transcript (.PDf)
-          </label>
-          <input
-            type="file"
-            id="attachment1"
-            name="attachment1"
-            accept=".pdf"
-            onChange={handleFileChange}
-            className="mt-1"
-          />
-        </div>
-
-        <div className="mb-4 col-span-3">
-          <label htmlFor="attachment" className="block text-sm font-medium">
-          In 500 words tell us about yourself. You are not allowed beyond 500 words but you can write with less words. * 
-          </label>
-          <input
-            type="file"
-            id="attachment2"
-            name="attachment2"
-            accept=".pdf"
-            onChange={handleFileChange}
-            className="mt-1"
-          />
-        </div>
+      
 
 
-        <div className="mb-4 col-span-3">
-          <label htmlFor="attachment" className="block text-sm font-medium">
-            Upload your Transcript (.PDf)
-          </label>
-          <input
-            type="file"
-            id="attachment2"
-            name="attachment2"
-            accept=".pdf"
-            onChange={handleFileChange}
-            className="mt-1"
-          />
-        </div>
 
-
-        <div className="mt-4 col-span-3">
-          
-  <div className="flex justify-center">
+    <div className="mt-4 col-span-3">
+    <div className="flex justify-center">
     <button
       type="submit"
       className={`mb-20  px-4 py-2 bg-designColor text-white rounded hover:bg-designColorLight ${loading ? 'opacity-50 cursor-not-allowed' : ''}`}
@@ -417,4 +340,4 @@ const StudentRegistrationForm = () => {
   );
 };
 
-export default StudentRegistrationForm;
+export default MentorRegistrationForm;

@@ -14,7 +14,7 @@ const RightBanner = () => {
 
         <div className="flex justify-end">
   <div className="bg-designColor mt-10 px-4 py-2 rounded-md text-white cursor-pointer hover:bg-designColorLight font-bodyFont">
-    <Link to="/about">Be a Mentor</Link>
+    <Link to="/mentor">Be a Mentor</Link>
   </div>
 </div>
       </div>
