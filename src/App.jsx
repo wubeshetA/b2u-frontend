@@ -21,7 +21,7 @@ function App() {
             <Banner/>
             <Intro/>
             <Partners/>
-            <Footer/>
+            
           </Route>
           <Route path="/about">
             
@@ -37,6 +37,7 @@ function App() {
           <MentorRegistrationForm/> 
           </Route>
         </Switch>
+        <Footer/>
       </div>
     </Router>
   )

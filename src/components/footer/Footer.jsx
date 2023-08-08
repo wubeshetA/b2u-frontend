@@ -5,7 +5,7 @@ function Footer() {
   return (
     <footer className="bg-designColor text-white py-10">
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
-        <div className="logo mb-4 md:mb-0">
+        <div className="logo ml-10 mb-4 md:mb-0">
           <img src="/B2U_logo.svg" alt="Non-profit organization logo" />
         </div>
         <div className="social-media flex items-center">
@@ -19,7 +19,7 @@ function Footer() {
             <FaInstagram />
           </a>
         </div>
-        <div className="copyright">
+        <div className="copyright mr-4">
           &copy; 2023 Bridge2University. All rights reserved.
         </div>
       </div>
